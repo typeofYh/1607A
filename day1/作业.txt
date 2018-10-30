@@ -1,0 +1,16 @@
+1.reduce({
+    tag:'-',
+    cont:[1,2,4,5]
+})
+2. 预习字符串方法，复习数组方法
+some
+every
+forEach
+map
+filter
+reduce
+reduceRight
+
+3. 封装ajax 使用函数默认参数
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let json = {
+        //     name: 'zs',
+        //     age: 15
+        // };
+
+        // let {
+        //     name,
+        //     age
+        // } = json;
+        // console.log(name, age);
+
+        let {
+            a: number,
+            b // b:b
+        } = {
+            a: 10,
+            b: 'hello'
+        };
+
+        //console.log(number, b);
+
+
+        function sum([title, ...cont]) {
+            //补全代码
+            let sumnumber = cont.reduce(function(prev, next) {
+                return prev + next;
+            });
+            return title + ':' + sumnumber;
+        };
+
+        console.log(sum([
+            '求和', 10, 20, 30, 40
+        ]));
+
+
+
+        function formate(...sum) {
+            console.log(sum);
+        }
+        formate(1, 4, 5, 5, 6);
+
+        let el = [...document.querySelectorAll('*')];
+        console.log(el);
+
+
+        // let x = 100;
+        // let y = 200;
+        // [x, y] = [y, x];
+
+        // console.log(x, y);
+
+
+        function getOption(el) {
+            return {
+                bodyx: el.offsetLeft,
+                bodyy: el.offsetTop
+            }
+        };
+
+
+        let {
+            bodyx, //bodyx:bodyx
+            bodyy
+        } = getOption(document.body);
+        console.log(bodyx, bodyy);
+    </script>
+</body>
+
+</html>
