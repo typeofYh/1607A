@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="text">
+    <p style="color:red;display:none;"></p>
+    <script>
+        let count = Math.floor(Math.random() * 5 + 1);
+        let start = '⭐'.repeat(count);
+        // for (let i = 0; i < count; i++) {
+        //     start += '⭐'
+        // };
+        console.log(start);
+
+
+        let str1 = 'bawei';
+        console.log(str1.indexOf('w'));
+        console.log(str1.includes('w', 2));
+
+        let arr = ['*', '#', '%'];
+        const input = document.querySelector('#text');
+        const p = document.querySelector('p');
+        p.innerHTML = '不能包含特殊字符' + arr.join(',');
+        input.oninput = function() {
+            let val = this.value.trim();
+            let res = arr.some(text => val.includes(text));
+            if (res) {
+                p.style.display = 'block';
+            } else {
+                p.style.display = 'none';
+            }
+        };
+
+
+        let str2 = '1607A---vue';
+    </script>
+</body>
+
+</html>

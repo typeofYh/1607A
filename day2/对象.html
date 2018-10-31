@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let extend = (...obj) => {
+        //     let oldobj = obj[0];
+        //     obj.forEach((val, i) => {
+        //         if (i > 0) {
+        //             for (let key in val) {
+        //                 oldobj[key] = val[key]
+        //             }
+        //         }
+        //     });
+        //     return oldobj;
+        // };
+
+        let ops = Object.assign({}, {
+            name: 'zs',
+            sex: true
+        }, {
+            name: 'ww',
+            age: 18
+        });
+        //console.log(ops);
+
+        // let obj = {};
+        // let name = 'age';
+        // obj.name = 'zs';
+        // obj[name] = 18;  //obj['age'] = 18
+        // console.log(obj);
+        let opsName = '';
+        Object.defineProperty(ops, 'name', {
+            get() {
+                return '1607A';
+            },
+            set(val) {
+                opsName = val;
+            }
+        });
+
+        // console.log(ops.name);
+        // ops.name = 'bawei';
+        // console.log(ops.name);
+        // console.log(opsName);
+        console.log(Object.keys(ops));
+    </script>
+</body>
+
+</html>

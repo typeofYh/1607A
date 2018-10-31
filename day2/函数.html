@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        let obj = {
+            age: 18,
+            sayAge: () => {
+                alert(this.age);
+            },
+            sayAge1() {
+                alert(this.age);
+            }
+        };
+
+        obj.sayAge();
+        obj.sayAge1();
+
+
+        let btn = document.querySelector('button');
+        btn.onclick = () => {
+            console.log(this);
+            console.log(this.innerHTML);
+        }
+
+
+        let fun = function() {
+            this.name = 'fun';
+        };
+
+        alert(new fun().name);
+
+
+        let Fun = (...argu) => {
+            console.log(argu);
+        };
+
+        Fun(10, 11, 12);
+
+
+        //extend({},{})
+    </script>
+</body>
+
+</html>
