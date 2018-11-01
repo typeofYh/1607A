@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="swiper">
+        <ul>
+
+        </ul>
+    </div>
+    <script src="js/ajax.js"></script>
+    <script src="js/imageload.js"></script>
+    <script src="js/swiper.js"></script>
+    <script>
+        ajax({
+            url: 'http://localhost:8082/',
+            type: 'GET',
+            data: {
+                name: '1607A',
+                person: 33
+            }
+        }).then(data => {
+            swiper(data.images);
+        })
+    </script>
+</body>
+
+</html>
