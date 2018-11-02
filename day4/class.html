@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-box">
+        <div class="table-title">
+
+        </div>
+        <div class="table-cont">
+
+        </div>
+    </div>
+    <script>
+        class Swiper {
+            constructor(el, ops) {
+                this.parent = this.getDom(el);
+                this.title = this.getDom('.table-title', this.parent);
+                this.cont = this.getDom('.table-cont', this.parent);
+                this.init(ops);
+            }
+            init(ops) {
+                this.classname = ops.classname;
+                this.data = ops.data;
+                this.render(ops.data);
+                this.addEvent();
+            }
+            getDom(str, parent = document) {
+                return parent.querySelector(str);
+            }
+            render(data) {
+                this.title.innerHTML = data.map((item, index) => `<button data-index="${index}">${item.title}</button>`).join('');
+            }
+            addEvent() {
+                let btn = [...this.title.querySelectorAll('button')];
+                this.title.onclick = (e) => {
+                    let tag = e.target;
+                    if (tag.tagName === 'BUTTON') {
+                        let index = +tag.dataset.index;
+                        btn.forEach(item => {
+                            item.classList.remove(this.classname);
+                        })
+                        tag.classList.add(this.classname);
+                        this.cont.innerHTML = this.data[index].cont;
+                    }
+                }
+                btn[0].click();
+            }
+        }
+
+        new Swiper('.table-box', {
+            data: [{
+                "title": "今天",
+                "cont": "天气不好"
+            }, {
+                "title": "明天",
+                "cont": "周六啦"
+            }, {
+                "title": "后天",
+                "cont": "不用上班"
+            }],
+            classname: 'active'
+        })
+    </script>
+</body>
+
+</html>
