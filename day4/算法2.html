@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rotate(arr) {
+            var newarr = [];
+            var length = arr.length;
+            var index = 0;
+            for (var i = arr.length - 1; i >= 0; i--) {
+                //i 2 1 0
+                var area = [];
+                for (var j = 0; j < arr[i].length; j++) {
+                    //index =0 j=0,1,2
+                    //index = 1 j=0,1,2
+                    area.unshift(arr[j][index]);
+                }
+                index++;
+                newarr.push(area);
+            }
+            console.log(newarr);
+        };
+        var matrix1 = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ];
+        var matrix2 = [
+            [5, 1, 9, 11],
+            [2, 4, 8, 10],
+            [13, 3, 6, 7],
+            [15, 14, 12, 16]
+        ];
+        //在原有的矩阵中翻转
+        rotate(matrix1);
+        rotate(matrix2);
+
+
+
+        //运行结果
+        // matrix1 = [
+        //     [7, 4, 1]，
+        //     [8, 5, 2]，
+        //     [9, 6, 3]
+        // ]
+
+        // matrix2 = [
+        //     [15, 13, 2, 5],
+        //     [14, 3, 4, 1],
+        //     [12, 6, 8, 9],
+        //     [16, 7, 10, 11],
+        // ]
+    </script>
+</body>
+
+</html>
