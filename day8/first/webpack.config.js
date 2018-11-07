@@ -12,7 +12,12 @@ module.exports = {
     },
     devServer: {
         port: 9090,
-        hot: true
+        hot: true,
+        setup(app) {
+            app.get('/api/data', function(req, res) {
+                res.json({ mes: 'success' })
+            })
+        }
     },
     module: {
         rules: [{
@@ -32,7 +37,7 @@ module.exports = {
                 use: ["css-loader"]
             })
         }, {
-            test: /\.(jpg|png|gif|svg)$/,
+            test: /\.(jpg|png|gif|svg|eot|ttf|woff)$/,
             use: [{
                 loader: 'url-loader',
                 options: {
@@ -41,11 +46,16 @@ module.exports = {
             }]
         }]
     },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+            '@': Util.pathurl('src/')
+        }
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HtmlPlugin({
-            template: "./index.html",
-            inject: 'head'
+            template: "./index.html"
         }),
         new ExtractText('style.css')
     ]
