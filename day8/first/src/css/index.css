@@ -1,0 +1,24 @@
+body,
+html,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: rosybrown;
+    font-size: 24px;
+    color: #fff;
+}
+
+h2 {
+    background: url(../img/logo.jpg);
+    background-repeat: no-repeat;
+    background-size: 200px auto;
+}
