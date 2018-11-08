@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{title}}</h2>
+        <ul>
+            <li v-for="(val,index) in list" :key="index">
+                <input type="checkbox" :checked="val.checked" :class="abc+'1234'" @click="checkone(index)">{{val.name}}
+            </li>
+        </ul>
+        <p><input type="checkbox" :checked="allchecked" @click="checkall">全选</p>
+    </div>
+</body>
+
+</html>

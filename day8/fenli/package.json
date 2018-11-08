@@ -1,0 +1,30 @@
+{
+    "name": "fenli",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config build/webpack.dev.js",
+        "prod": "webpack --config build/webpack.prod.js",
+        "dev": "webpack-dev-server --config build/webpack.dev.js",
+        "start": "npm run dev"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "babel-loader": "^7.1.5",
+        "babel-preset-env": "^1.7.0",
+        "css-loader": "^1.0.1",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "html-webpack-plugin": "^3.2.0",
+        "style-loader": "^0.23.1",
+        "webpack-merge": "^4.1.4"
+    },
+    "dependencies": {
+        "vue": "^2.5.17",
+        "webpack": "^4.25.1",
+        "webpack-dev-server": "^3.1.10"
+    }
+}
